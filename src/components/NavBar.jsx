@@ -5,6 +5,7 @@ import { removeUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';  
 import { BASE_URL } from '../utils/constants';
+import './NavBar.css';
 
 const NavBar = () => {
   const user = useSelector((store)=> store.user);
@@ -59,10 +60,10 @@ const NavBar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/connections">Connections</Link>
+          <Link to="/Connections">Connections</Link>
           </li>
           <li>
-          <Link to="/requests">Requests</Link>
+          <Link to="/Requests">Requests</Link>
           </li>
         <li><a onClick={handleLogout}>Logout</a></li>
       </ul>

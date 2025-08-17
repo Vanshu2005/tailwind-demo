@@ -1,0 +1,28 @@
+.connections-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.connection-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 50%;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.connection-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.connection-card .btn {
+  margin: 0 0.25rem;
+  border-radius: 2rem;
+  font-weight: bold;
+}

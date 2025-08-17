@@ -1,0 +1,12 @@
+.feed-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  background: #f8f8f8;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+}

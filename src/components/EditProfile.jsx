@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { BASE_URL } from '../utils/constants';
 import UserCard from './UserCard';
+import './EditProfile.css'; 
 
 const EditProfile = () => {
   const user = useSelector((state) => state.user);
@@ -12,7 +13,7 @@ const EditProfile = () => {
 
   const [firstName, setFirstName] = useState(user?.firstName || "");
   const [lastName, setLastName] = useState(user?.lastName || "");
-  // const[photoUrl,setPhotoUrl]=useState(user.photoUrl);
+  const [photoUrl, setPhotoUrl] = useState(user?.photoUrl || ""); 
   const [age, setAge] = useState(user?.age || "");
   const [gender, setGender] = useState(user?.gender || "");
   const [about, setAbout] = useState(user?.about || "");
@@ -68,6 +69,20 @@ const EditProfile = () => {
             />
           </fieldset>
 
+           {/* Photo URL */}
+          <fieldset className="fieldset">
+            <legend className="fieldset-legend">Photo URL</legend>
+            <input
+              type="text"
+              className="input"
+              placeholder="Enter photo URL"
+              value={photoUrl}
+              onChange={(e) => setPhotoUrl(e.target.value)}
+            />
+            </fieldset>
+
+
+
           {/* Age */}
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Age</legend>
@@ -120,7 +135,7 @@ const EditProfile = () => {
 
       {/* Preview User Card */}
       <div>
-        <UserCard user={{ firstName, lastName, age, gender, about }} />
+        <UserCard user={{ firstName, lastName,photoUrl, age, gender, about }} />
       </div>
 
       {/* Toast */}

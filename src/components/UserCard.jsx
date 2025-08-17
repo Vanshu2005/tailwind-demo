@@ -3,34 +3,35 @@ import axios from 'axios';
 import { BASE_URL } from '../utils/constants';
 import { useDispatch } from 'react-redux';
 import { removeUserFromFeed } from '../utils/feedSlice';
+import './UserCard.css';
+
 
 const UserCard = ({ user }) => {
   const dispatch = useDispatch();
-
-  // ⚡ Guard clause to avoid destructuring undefined
+  
   if (!user) {
-    return null; // or return a loading skeleton
+    return null; 
   }
 
   const { _id, firstName, lastName, photoUrl, age, gender, about } = user;
 
-  const handleSendRequest = async (status, userId) => {
+  const handleSendRequest = async (status) => {
     try {
-      const res = await axios.post(
-        `${BASE_URL}/request/send/${status}/${userId}`,
+      await axios.post(
+        `${BASE_URL}/request/send/${status}/${_id}`,
         {},
         { withCredentials: true }
       );
-      dispatch(removeUserFromFeed(userId));
+      dispatch(removeUserFromFeed(_id)); // ✅ remove user from feed after action
     } catch (err) {
-      console.error("Error sending request:", err.response?.data || err.message);
+      console.error("Error sending request:", err.message);
     }
   };
 
   return (
     <div className="card bg-base-300 w-96 shadow-sm">
       <figure>
-        <img src={photoUrl} alt="user-photo" />
+        <img src={photoUrl || "https://placehold.co/400x400" } alt="user-photo" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{firstName + " " + lastName}</h2>
@@ -43,6 +44,7 @@ const UserCard = ({ user }) => {
           >
             Ignore
           </button>
+          
           <button
             className="btn btn-secondary"
             onClick={() => handleSendRequest("interested", _id)}

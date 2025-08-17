@@ -1,0 +1,51 @@
+body {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.login-card input, 
+.login-card select, 
+.login-card textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-card p {
+  margin-top: 1rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.text-red-500 {
+  color: red;
+}

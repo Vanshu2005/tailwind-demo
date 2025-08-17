@@ -1,0 +1,8 @@
+/* Body.css */
+
+body-wrapper {
+  background: #f8f8f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
