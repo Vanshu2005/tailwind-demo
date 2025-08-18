@@ -1,10 +1,15 @@
 .navbar {
+  position: fixed;
+  top: 0;                /* fix to top */
+  left: 0;
+  width: 100%;           /* span full width */
   background: #fff;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;         /* keep above other content */
 }
 
 .navbar .btn-ghost {
@@ -16,4 +21,9 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+/* Prevent content from hiding behind fixed navbar */
+body {
+  padding-top: 70px;   /* adjust to your navbar height */
 }
