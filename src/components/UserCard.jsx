@@ -33,6 +33,8 @@ const UserCard = ({ user }) => {
       <figure>
         <img src={photoUrl || "https://placehold.co/400x400" } alt="user-photo" />
       </figure>
+
+      
       <div className="card-body">
         <h2 className="card-title">{firstName + " " + lastName}</h2>
         {age && gender && <p>{age + ", " + gender}</p>}

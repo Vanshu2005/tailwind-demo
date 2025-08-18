@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./index.css";
-import { BrowserRouter,Routes,Route } from 'react-router';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import divider from 'daisyui/components/divider';
 import Body from "./components/Body";
@@ -21,7 +21,8 @@ export default class App extends Component {
       <BrowserRouter basename='/'>
       <Routes>
         <Route path="/" element={<Body/>}>
-        <Route path="/" element={<Feed/>}/>
+        <Route index element={<Feed />} />       
+              <Route path="feed" element={<Feed />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/profile" element={<Profile/>} />
 
